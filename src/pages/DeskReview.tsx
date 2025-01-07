@@ -33,7 +33,7 @@ const DeskReview = () => {
             <section className="mb-12">
               <h2 className="text-2xl font-bold mb-6">Best Overall: Flexispot EC1 Standing Desk</h2>
               <img
-                src="https://m.media-amazon.com/images/I/71cFRwJqMtL._AC_SL1500_.jpg"
+                src="https://m.media-amazon.com/images/I/81GYcaGN3LL._AC_SX679_.jpg"
                 alt="Flexispot EC1 Standing Desk"
                 className="w-full rounded-lg mb-4"
               />
@@ -42,7 +42,7 @@ const DeskReview = () => {
               </p>
               <div className="flex justify-center mb-8">
                 <a
-                  href="https://www.amazon.com/dp/B0BN6FRYW9"
+                  href="https://www.amazon.com/Flexispot-Adjustable-Electric-Standing-Marble/dp/B08M3LYMWQ/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-secondary text-white px-6 py-3 rounded-lg hover:bg-accent transition-colors"
