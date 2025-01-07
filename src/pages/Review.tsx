@@ -4,7 +4,7 @@ import { reviews } from "@/data/reviews";
 
 const Review = () => {
   const { reviewId } = useParams();
-  const review = reviews.find((r) => r.id === reviewId);
+  const review = reviews.find((r) => r.id === Number(reviewId));
 
   if (!review) {
     return (
@@ -40,12 +40,12 @@ const Review = () => {
             <div className="flex items-center gap-4 text-gray-600 mb-6">
               <span className="font-semibold">Price Range: {review.price}</span>
               <span>•</span>
-              <span>Updated {new Date().toLocaleDateString()}</span>
+              <span>Updated {new Date(review.date).toLocaleDateString()}</span>
             </div>
           </div>
 
           <img
-            src={review.imageUrl}
+            src={review.imageUrl || review.image}
             alt={review.title}
             className="w-full h-[400px] object-cover rounded-lg mb-8"
           />
@@ -53,7 +53,7 @@ const Review = () => {
           <div className="prose prose-lg max-w-none">
             <div className="bg-gray-100 p-6 rounded-lg mb-8">
               <h2 className="text-xl font-semibold mb-4">Quick Verdict</h2>
-              <p className="text-gray-700">{review.excerpt}</p>
+              <p className="text-gray-700">{review.excerpt || review.description}</p>
             </div>
 
             <div className="flex justify-center mb-8">
@@ -67,7 +67,6 @@ const Review = () => {
               </a>
             </div>
 
-            {/* This is where the full review content would go */}
             <p className="text-gray-600 italic">
               Note: This is a demo review page. In a real implementation, this would contain the full review content with detailed sections about features, pros and cons, comparisons, and more.
             </p>
