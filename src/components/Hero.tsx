@@ -8,7 +8,7 @@ export const Hero = () => {
         }}
       />
       <div className="absolute inset-0 bg-black/50" /> {/* Dark overlay for better text readability */}
-      <div className="relative py-16">
+      <div className="relative py-32 min-h-[600px] flex items-center">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
