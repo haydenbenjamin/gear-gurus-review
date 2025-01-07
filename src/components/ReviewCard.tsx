@@ -7,7 +7,7 @@ interface ReviewCardProps {
 
 export const ReviewCard = ({ review }: ReviewCardProps) => {
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-[1.02] animate-fade-in">
+    <div className="bg-primary rounded-lg shadow-xl overflow-hidden transition-transform hover:scale-[1.02] animate-fade-in border border-accent/20">
       <img
         src={review.imageUrl}
         alt={review.title}
@@ -17,19 +17,19 @@ export const ReviewCard = ({ review }: ReviewCardProps) => {
         <span className="text-sm text-secondary uppercase tracking-wider">
           {review.category}
         </span>
-        <h2 className="text-xl font-semibold mt-2 mb-2">
+        <h2 className="text-xl font-semibold mt-2 mb-2 text-white">
           <Link to={`/review/${review.id}`} className="hover:text-secondary">
             {review.title}
           </Link>
         </h2>
-        <p className="text-gray-600 mb-4">{review.excerpt}</p>
+        <p className="text-gray-300 mb-4">{review.excerpt}</p>
         <div className="flex justify-between items-center">
-          <span className="text-primary font-semibold">{review.price}</span>
+          <span className="text-secondary font-semibold">{review.price}</span>
           <a
             href={review.amazonUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-secondary text-white px-4 py-2 rounded hover:bg-primary transition-colors"
+            className="bg-secondary text-white px-4 py-2 rounded hover:bg-accent transition-colors"
           >
             View on Amazon
           </a>
