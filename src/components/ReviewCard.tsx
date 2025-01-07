@@ -25,14 +25,12 @@ export const ReviewCard = ({ review }: ReviewCardProps) => {
         <p className="text-gray-300 mb-4">{review.excerpt}</p>
         <div className="flex justify-between items-center">
           <span className="text-secondary font-semibold">{review.price}</span>
-          <a
-            href={review.amazonUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to={`/review/${review.id}`}
             className="bg-secondary text-white px-4 py-2 rounded hover:bg-accent transition-colors"
           >
-            View on Amazon
-          </a>
+            Full Review
+          </Link>
         </div>
       </div>
     </div>

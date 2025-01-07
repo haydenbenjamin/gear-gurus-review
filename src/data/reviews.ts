@@ -6,6 +6,7 @@ export interface Review {
   amazonUrl: string;
   imageUrl: string;
   price: string;
+  updatedAt: string;
 }
 
 export const reviews: Review[] = [
@@ -17,6 +18,7 @@ export const reviews: Review[] = [
     amazonUrl: "https://www.amazon.com/s?k=home+office+desk+under+200",
     imageUrl: "https://m.media-amazon.com/images/I/71cFRwJqMtL._AC_SL1500_.jpg",
     price: "Under $200",
+    updatedAt: "2024-03-20",
   },
   {
     id: "best-32-inch-monitors",
@@ -26,6 +28,7 @@ export const reviews: Review[] = [
     amazonUrl: "https://www.amazon.com/s?k=32+inch+monitor",
     imageUrl: "https://m.media-amazon.com/images/I/71mU5rpECpL._AC_SL1500_.jpg",
     price: "$200-$500",
+    updatedAt: "2024-03-19",
   },
   {
     id: "best-mac-docking-stations",
@@ -35,6 +38,7 @@ export const reviews: Review[] = [
     amazonUrl: "https://www.amazon.com/s?k=macbook+docking+station",
     imageUrl: "https://m.media-amazon.com/images/I/71J2Z3dTwxL._AC_SL1500_.jpg",
     price: "$100-$300",
+    updatedAt: "2024-03-18",
   },
 ];
 
