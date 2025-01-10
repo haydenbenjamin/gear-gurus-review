@@ -28,7 +28,7 @@ export const ReviewCard = ({ review }: ReviewCardProps) => {
             to={review.url}
             className="bg-secondary text-white px-4 py-2 rounded hover:bg-accent transition-colors"
           >
-            Full Review
+            Buy at Amazon
           </Link>
         </div>
       </div>
