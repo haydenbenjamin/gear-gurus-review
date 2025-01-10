@@ -105,7 +105,7 @@ const DeskReview = () => {
         </article>
 
         {relatedReviews.length > 0 && (
-          <section className="mt-16 max-w-4xl mx-auto">
+          <section className="mt-16 max-w-4xl mx-auto bg-primary rounded-lg p-8">
             <h2 className="text-2xl font-bold text-white mb-6">More Desk Reviews</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {relatedReviews.map((review) => (
