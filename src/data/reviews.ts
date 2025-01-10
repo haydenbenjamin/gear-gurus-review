@@ -74,5 +74,44 @@ export const reviews: Review[] = [
     imageUrl: "https://m.media-amazon.com/images/I/81D1Z1g1WPL._AC_SL1500_.jpg",
     amazonUrl: "https://www.amazon.com/example",
     price: "$50-$200"
+  },
+  {
+    id: 5,
+    title: "Best Standing Desks for 2024",
+    description: "A comprehensive guide to the best standing desks available in the market.",
+    image: "https://m.media-amazon.com/images/I/71vZypjNkPS._AC_SL1500_.jpg",
+    category: "desks",
+    url: "/desks/best-standing-desks",
+    date: "2024-03-15",
+    excerpt: "Find the perfect standing desk to improve your work setup and posture.",
+    imageUrl: "https://m.media-amazon.com/images/I/71vZypjNkPS._AC_SL1500_.jpg",
+    amazonUrl: "https://www.amazon.com/example",
+    price: "$300-$800"
+  },
+  {
+    id: 6,
+    title: "Best L-Shaped Desks Review",
+    description: "Discover the top L-shaped desks for maximizing your workspace.",
+    image: "https://m.media-amazon.com/images/I/81XR+H7YgIL._AC_SL1500_.jpg",
+    category: "desks",
+    url: "/desks/best-l-shaped-desks",
+    date: "2024-03-10",
+    excerpt: "Find the perfect L-shaped desk to maximize your workspace efficiency.",
+    imageUrl: "https://m.media-amazon.com/images/I/81XR+H7YgIL._AC_SL1500_.jpg",
+    amazonUrl: "https://www.amazon.com/example",
+    price: "$150-$400"
+  },
+  {
+    id: 7,
+    title: "Best Gaming Desks Under $300",
+    description: "The ultimate guide to affordable gaming desks that don't compromise on quality.",
+    image: "https://m.media-amazon.com/images/I/71WSt8qL1FL._AC_SL1500_.jpg",
+    category: "desks",
+    url: "/desks/best-gaming-desks-under-300",
+    date: "2024-03-05",
+    excerpt: "Find the perfect gaming desk that fits your budget and gaming setup needs.",
+    imageUrl: "https://m.media-amazon.com/images/I/71WSt8qL1FL._AC_SL1500_.jpg",
+    amazonUrl: "https://www.amazon.com/example",
+    price: "Under $300"
   }
 ];
