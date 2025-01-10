@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { reviews } from "@/data/reviews";
+import { ReviewCard } from "@/components/ReviewCard";
 
 const Review = () => {
   const { reviewId } = useParams();
@@ -21,6 +22,10 @@ const Review = () => {
       </div>
     );
   }
+
+  const relatedReviews = reviews
+    .filter((r) => r.category === review.category && r.id !== review.id)
+    .slice(0, 3);
 
   return (
     <div className="min-h-screen bg-muted">
@@ -72,6 +77,17 @@ const Review = () => {
             </p>
           </div>
         </article>
+
+        {relatedReviews.length > 0 && (
+          <section className="mt-16 max-w-4xl mx-auto">
+            <h2 className="text-2xl font-bold text-white mb-6">More {review.category} Reviews</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {relatedReviews.map((relatedReview) => (
+                <ReviewCard key={relatedReview.id} review={relatedReview} />
+              ))}
+            </div>
+          </section>
+        )}
       </main>
     </div>
   );
