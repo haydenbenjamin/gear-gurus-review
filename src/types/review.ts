@@ -21,10 +21,11 @@ export interface Review {
 
 export const categories = [
   { id: "all", name: "All Reviews" },
+  { id: "computer-accessories", name: "Computer Accessories" },
   { id: "desks", name: "Desks" },
   { id: "chairs", name: "Chairs" },
-  { id: "monitors", name: "Monitors" },
-  { id: "accessories", name: "Accessories" },
-  { id: "lights", name: "Lighting" },
   { id: "cameras", name: "Cameras" },
+  { id: "lighting", name: "Lighting" },
+  { id: "desk-accessories", name: "Desk Accessories" },
+  { id: "audio", name: "Audio" }
 ];
