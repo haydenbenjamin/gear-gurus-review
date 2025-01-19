@@ -7,38 +7,54 @@ import { ProductReview } from "@/components/review/ProductReview";
 import { RelatedReviews } from "@/components/review/RelatedReviews";
 
 const Review = () => {
-  const { category, slug } = useParams();
-  const url = `${category}/${slug}`;
-
+  const { "*": path } = useParams();
+  
   const { data: review, isLoading } = useQuery({
-    queryKey: ["review", url],
-    queryFn: () => getReviewByUrl(url),
+    queryKey: ["review", path],
+    queryFn: () => getReviewByUrl(path || ""),
   });
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="container mx-auto px-4 py-8">
+        <div className="animate-pulse">Loading review...</div>
+      </div>
+    );
   }
 
   if (!review) {
-    return <div>Review not found</div>;
+    return (
+      <div className="container mx-auto px-4 py-8">
+        <div className="text-red-500">Review not found</div>
+      </div>
+    );
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <ReviewHeader title={review.title} date={review.date} />
-      {review.quickTake && <QuickTake content={review.quickTake} />}
-      <div className="space-y-8">
-        {review.products?.map((product) => (
-          <ProductReview
-            key={product.title}
-            title={product.title}
-            imageUrl={product.imageUrl}
-            description={product.description}
-            amazonUrl={product.amazonUrl}
-          />
-        ))}
+    <div className="min-h-screen bg-white">
+      <div className="container mx-auto px-4 py-8">
+        <ReviewHeader title={review.title} date={review.date} />
+        
+        {review.quickTake && (
+          <QuickTake content={review.quickTake} />
+        )}
+
+        <div className="space-y-8">
+          {review.products?.map((product) => (
+            <ProductReview
+              key={product.title}
+              title={product.title}
+              imageUrl={product.imageUrl}
+              description={product.description}
+              amazonUrl={product.amazonUrl}
+            />
+          ))}
+        </div>
+
+        <RelatedReviews
+          reviews={[]}
+        />
       </div>
-      <RelatedReviews reviews={[]} />
     </div>
   );
 };

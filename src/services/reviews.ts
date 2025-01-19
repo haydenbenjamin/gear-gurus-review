@@ -10,23 +10,23 @@ export async function getReviewsByCategory(category: string): Promise<Review[]> 
   }
 }
 
-export async function getReviewByUrl(url: string): Promise<Review | null> {
+export async function getReviewByUrl(path: string): Promise<Review | null> {
   // Remove leading slash if present
-  const cleanUrl = url.startsWith('/') ? url.substring(1) : url;
+  const cleanPath = path.startsWith('/') ? path.substring(1) : path;
   
-  // Split the URL into category and slug
-  const [category] = cleanUrl.split('/');
+  // Get the category from the first part of the path
+  const category = cleanPath.split('/')[0];
   
   try {
     const reviews = await getReviewsByCategory(category);
     const review = reviews.find(review => {
       const reviewUrl = review.url.startsWith('/') ? review.url.substring(1) : review.url;
-      return reviewUrl === cleanUrl;
+      return reviewUrl === cleanPath;
     });
     
     return review || null;
   } catch (error) {
-    console.error(`Error finding review for URL ${url}:`, error);
+    console.error(`Error finding review for path ${path}:`, error);
     return null;
   }
 }
