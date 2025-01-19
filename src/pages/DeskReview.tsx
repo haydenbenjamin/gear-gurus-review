@@ -1,15 +1,35 @@
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { Header } from "@/components/Header";
-import { reviews } from "@/data/reviews";
 import { ReviewHeader } from "@/components/review/ReviewHeader";
 import { QuickTake } from "@/components/review/QuickTake";
 import { ProductReview } from "@/components/review/ProductReview";
 import { RelatedReviews } from "@/components/review/RelatedReviews";
+import { getReviewByUrl, getReviewsByCategory } from "@/services/reviews";
+import { Review } from "@/types/review";
 
 const DeskReview = () => {
-  const review = reviews.find((r) => r.url === "/desks/best-desks-under-200");
-  const relatedReviews = reviews
-    .filter((r) => r.category === "desks" && r.url !== "/desks/best-desks-under-200")
-    .slice(0, 3);
+  const [review, setReview] = useState<Review | null>(null);
+  const [relatedReviews, setRelatedReviews] = useState<Review[]>([]);
+  const { reviewId } = useParams();
+
+  useEffect(() => {
+    const loadReview = async () => {
+      const url = `/desks/${reviewId}`;
+      const reviewData = await getReviewByUrl(url);
+      setReview(reviewData);
+
+      if (reviewData) {
+        const allReviews = await getReviewsByCategory("desks");
+        const related = allReviews
+          .filter((r) => r.url !== url)
+          .slice(0, 3);
+        setRelatedReviews(related);
+      }
+    };
+
+    loadReview();
+  }, [reviewId]);
 
   if (!review) return null;
 
