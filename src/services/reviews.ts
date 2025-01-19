@@ -11,14 +11,27 @@ export async function getReviewsByCategory(category: string): Promise<Review[]> 
 }
 
 export async function getReviewByUrl(url: string): Promise<Review | null> {
-  // Extract category from URL (e.g., "desks" from "/desks/best-desks-under-200")
-  const category = url.split('/')[1];
+  // Remove leading slash if present
+  const cleanUrl = url.startsWith('/') ? url.substring(1) : url;
   
-  try {
-    const reviews = await getReviewsByCategory(category);
-    return reviews.find(review => review.url === url) || null;
-  } catch (error) {
-    console.error(`Error loading review for URL ${url}:`, error);
-    return null;
+  // Try to find the review in each category
+  const categories = ['audio', 'desks'];
+  
+  for (const category of categories) {
+    try {
+      const reviews = await getReviewsByCategory(category);
+      const review = reviews.find(review => {
+        const reviewUrl = review.url.startsWith('/') ? review.url.substring(1) : review.url;
+        return reviewUrl === cleanUrl;
+      });
+      
+      if (review) {
+        return review;
+      }
+    } catch (error) {
+      console.error(`Error searching in category ${category}:`, error);
+    }
   }
+  
+  return null;
 }
