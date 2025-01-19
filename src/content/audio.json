@@ -1,3 +1,32 @@
 {
-  "reviews": []
+  "reviews": [
+    {
+      "id": 1,
+      "title": "Best Wireless Headphones Under $200",
+      "description": "A comprehensive guide to finding the perfect wireless headphones that deliver exceptional sound quality without breaking the bank.",
+      "image": "https://example.com/headphones-image.jpg",
+      "category": "audio",
+      "url": "/audio/best-wireless-headphones-under-200",
+      "date": "2024-03-20",
+      "excerpt": "Discover our top picks for wireless headphones that offer premium features and excellent sound quality while staying under $200.",
+      "imageUrl": "https://example.com/headphones-image.jpg",
+      "amazonUrl": "https://www.amazon.com/example-headphones",
+      "price": "Under $200",
+      "quickTake": "After testing dozens of wireless headphones, we've found that you can get premium features like active noise cancellation, great battery life, and excellent sound quality without spending a fortune.",
+      "products": [
+        {
+          "title": "Best Overall: Example Headphones Pro",
+          "imageUrl": "https://example.com/headphones-pro.jpg",
+          "description": "These headphones offer the perfect balance of sound quality, comfort, and features. With 30-hour battery life, active noise cancellation, and premium audio drivers, they're an exceptional value.",
+          "amazonUrl": "https://www.amazon.com/example-headphones-pro"
+        },
+        {
+          "title": "Best Budget Pick: Example Wireless 2",
+          "imageUrl": "https://example.com/headphones-budget.jpg",
+          "description": "Don't let the price fool you - these headphones deliver impressive sound quality and comfort at an incredibly affordable price point.",
+          "amazonUrl": "https://www.amazon.com/example-wireless-2"
+        }
+      ]
+    }
+  ]
 }
