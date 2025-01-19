@@ -2,29 +2,341 @@
   "reviews": [
     {
       "id": 1,
-      "title": "Best Wireless Headphones Under $200",
-      "description": "A comprehensive guide to finding the perfect wireless headphones that deliver exceptional sound quality without breaking the bank.",
-      "image": "https://example.com/headphones-image.jpg",
+      "title": "Best USB Microphone for Podcasting",
+      "description": "This comprehensive guide examines the top USB microphone options available in the market, based on performance metrics, user feedback, and expert analysis.",
+      "image": "/api/placeholder/800/600",
       "category": "audio",
-      "url": "/audio/best-wireless-headphones-under-200",
-      "date": "2024-03-20",
-      "excerpt": "Discover our top picks for wireless headphones that offer premium features and excellent sound quality while staying under $200.",
-      "imageUrl": "https://example.com/headphones-image.jpg",
-      "amazonUrl": "https://www.amazon.com/example-headphones",
-      "price": "Under $200",
-      "quickTake": "After testing dozens of wireless headphones, we've found that you can get premium features like active noise cancellation, great battery life, and excellent sound quality without spending a fortune.",
+      "url": "/audio/best-usb-microphone-for-podcasting",
+      "date": "2025-01-19",
+      "excerpt": "A thorough analysis of the market's leading USB microphone options, with detailed comparisons and recommendations based on performance, value, and reliability.",
+      "imageUrl": "/api/placeholder/800/600",
+      "amazonUrl": "https://www.amazon.com/s?k=usb+microphone",
+      "price": "$100-$300",
+      "quickTake": "Based on comprehensive market analysis and performance benchmarks, these USB microphone models stand out for their combination of features, performance, and value across different price points.",
       "products": [
         {
-          "title": "Best Overall: Example Headphones Pro",
-          "imageUrl": "https://example.com/headphones-pro.jpg",
-          "description": "These headphones offer the perfect balance of sound quality, comfort, and features. With 30-hour battery life, active noise cancellation, and premium audio drivers, they're an exceptional value.",
-          "amazonUrl": "https://www.amazon.com/example-headphones-pro"
+          "title": "Best Overall Choice",
+          "imageUrl": "/api/placeholder/400/400",
+          "description": "This model stands out for its exceptional performance and comprehensive feature set, making it the optimal choice for most users seeking a USB microphone.",
+          "amazonUrl": "https://www.amazon.com/s?k=usb+microphone+best+rated"
         },
         {
-          "title": "Best Budget Pick: Example Wireless 2",
-          "imageUrl": "https://example.com/headphones-budget.jpg",
-          "description": "Don't let the price fool you - these headphones deliver impressive sound quality and comfort at an incredibly affordable price point.",
-          "amazonUrl": "https://www.amazon.com/example-wireless-2"
+          "title": "Best Budget Option",
+          "imageUrl": "/api/placeholder/400/400",
+          "description": "This cost-effective option delivers reliable performance and essential features at a competitive price point, making it an excellent value choice.",
+          "amazonUrl": "https://www.amazon.com/s?k=usb+microphone+budget"
+        },
+        {
+          "title": "Premium Choice",
+          "imageUrl": "/api/placeholder/400/400",
+          "description": "This high-end model offers superior performance and advanced features, justifying its premium price point for users requiring professional-grade quality.",
+          "amazonUrl": "https://www.amazon.com/s?k=usb+microphone+premium"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Best Headset with Noise Cancellation Microphone",
+      "description": "This comprehensive guide examines the top noise-cancelling headset options available in the market, based on performance metrics, user feedback, and expert analysis.",
+      "image": "/api/placeholder/800/600",
+      "category": "audio",
+      "url": "/audio/best-headset-with-noise-cancellation-microphone",
+      "date": "2025-01-19",
+      "excerpt": "A thorough analysis of the market's leading noise-cancelling headsets, with detailed comparisons and recommendations based on performance, value, and reliability.",
+      "imageUrl": "/api/placeholder/800/600",
+      "amazonUrl": "https://www.amazon.com/s?k=noise+cancelling+headset",
+      "price": "$50-$200",
+      "quickTake": "Based on comprehensive market analysis and performance benchmarks, these noise-cancelling headsets stand out for their combination of features, performance, and value across different price points.",
+      "products": [
+        {
+          "title": "Best Overall Choice",
+          "imageUrl": "/api/placeholder/400/400",
+          "description": "This model stands out for its exceptional noise cancellation and comprehensive feature set, making it the optimal choice for most users seeking a noise-cancelling headset.",
+          "amazonUrl": "https://www.amazon.com/s?k=noise+cancelling+headset+best+rated"
+        },
+        {
+          "title": "Best Budget Option",
+          "imageUrl": "/api/placeholder/400/400",
+          "description": "This cost-effective option delivers reliable noise cancellation and essential features at a competitive price point, making it an excellent value choice.",
+          "amazonUrl": "https://www.amazon.com/s?k=noise+cancelling+headset+budget"
+        },
+        {
+          "title": "Premium Choice",
+          "imageUrl": "/api/placeholder/400/400",
+          "description": "This high-end model offers superior noise cancellation and advanced features, justifying its premium price point for users requiring professional-grade quality.",
+          "amazonUrl": "https://www.amazon.com/s?k=noise+cancelling+headset+premium"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Best White Noise Machine for Office",
+      "description": "This comprehensive guide examines the top white noise machine options available in the market, based on performance metrics, user feedback, and expert analysis.",
+      "image": "/api/placeholder/800/600",
+      "category": "audio",
+      "url": "/audio/best-white-noise-machine-for-office",
+      "date": "2025-01-19",
+      "excerpt": "A thorough analysis of the market's leading white noise machines, with detailed comparisons and recommendations based on performance, value, and reliability.",
+      "imageUrl": "/api/placeholder/800/600",
+      "amazonUrl": "https://www.amazon.com/s?k=white+noise+machine+office",
+      "price": "$30-$100",
+      "quickTake": "Based on comprehensive market analysis and performance benchmarks, these white noise machines stand out for their combination of features, performance, and value across different price points.",
+      "products": [
+        {
+          "title": "Best Overall Choice",
+          "imageUrl": "/api/placeholder/400/400",
+          "description": "This model stands out for its exceptional sound quality and comprehensive feature set, making it the optimal choice for most office environments.",
+          "amazonUrl": "https://www.amazon.com/s?k=white+noise+machine+office+best+rated"
+        },
+        {
+          "title": "Best Budget Option",
+          "imageUrl": "/api/placeholder/400/400",
+          "description": "This cost-effective option delivers reliable performance and essential features at a competitive price point, making it an excellent value choice.",
+          "amazonUrl": "https://www.amazon.com/s?k=white+noise+machine+office+budget"
+        },
+        {
+          "title": "Premium Choice",
+          "imageUrl": "/api/placeholder/400/400",
+          "description": "This high-end model offers superior sound customization and advanced features, justifying its premium price point for users requiring professional-grade quality.",
+          "amazonUrl": "https://www.amazon.com/s?k=white+noise+machine+office+premium"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Best Bluetooth Speaker for Home Office",
+      "description": "This comprehensive guide examines the top Bluetooth speaker options available in the market, based on performance metrics, user feedback, and expert analysis.",
+      "image": "/api/placeholder/800/600",
+      "category": "audio",
+      "url": "/audio/best-bluetooth-speaker-for-home-office",
+      "date": "2025-01-19",
+      "excerpt": "A thorough analysis of the market's leading Bluetooth speakers, with detailed comparisons and recommendations based on performance, value, and reliability.",
+      "imageUrl": "/api/placeholder/800/600",
+      "amazonUrl": "https://www.amazon.com/s?k=bluetooth+speaker+office",
+      "price": "$50-$200",
+      "quickTake": "Based on comprehensive market analysis and performance benchmarks, these Bluetooth speakers stand out for their combination of features, performance, and value across different price points.",
+      "products": [
+        {
+          "title": "Best Overall Choice",
+          "imageUrl": "/api/placeholder/400/400",
+          "description": "This model stands out for its exceptional sound quality and comprehensive feature set, making it the optimal choice for most home office environments.",
+          "amazonUrl": "https://www.amazon.com/s?k=bluetooth+speaker+office+best+rated"
+        },
+        {
+          "title": "Best Budget Option",
+          "imageUrl": "/api/placeholder/400/400",
+          "description": "This cost-effective option delivers reliable sound quality and essential features at a competitive price point, making it an excellent value choice.",
+          "amazonUrl": "https://www.amazon.com/s?k=bluetooth+speaker+office+budget"
+        },
+        {
+          "title": "Premium Choice",
+          "imageUrl": "/api/placeholder/400/400",
+          "description": "This high-end model offers superior audio performance and advanced features, justifying its premium price point for users requiring professional-grade quality.",
+          "amazonUrl": "https://www.amazon.com/s?k=bluetooth+speaker+office+premium"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Best Microphone for Online Teaching",
+      "description": "This comprehensive guide examines the top microphone options for online teaching available in the market, based on performance metrics, user feedback, and expert analysis.",
+      "image": "/api/placeholder/800/600",
+      "category": "audio",
+      "url": "/audio/best-microphone-for-online-teaching",
+      "date": "2025-01-19",
+      "excerpt": "A thorough analysis of the market's leading microphones for online teaching, with detailed comparisons and recommendations based on performance, value, and reliability.",
+      "imageUrl": "/api/placeholder/800/600",
+      "amazonUrl": "https://www.amazon.com/s?k=microphone+online+teaching",
+      "price": "$50-$200",
+      "quickTake": "Based on comprehensive market analysis and performance benchmarks, these microphones stand out for their combination of features, performance, and value across different price points.",
+      "products": [
+        {
+          "title": "Best Overall Choice",
+          "imageUrl": "/api/placeholder/400/400",
+          "description": "This model stands out for its exceptional clarity and comprehensive feature set, making it the optimal choice for most online teaching scenarios.",
+          "amazonUrl": "https://www.amazon.com/s?k=microphone+online+teaching+best+rated"
+        },
+        {
+          "title": "Best Budget Option",
+          "imageUrl": "/api/placeholder/400/400",
+          "description": "This cost-effective option delivers reliable audio quality and essential features at a competitive price point, making it an excellent value choice.",
+          "amazonUrl": "https://www.amazon.com/s?k=microphone+online+teaching+budget"
+        },
+        {
+          "title": "Premium Choice",
+          "imageUrl": "/api/placeholder/400/400",
+          "description": "This high-end model offers superior audio clarity and advanced features, justifying its premium price point for users requiring professional-grade quality.",
+          "amazonUrl": "https://www.amazon.com/s?k=microphone+online+teaching+premium"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Best Wireless Headset for Zoom Meetings",
+      "description": "This comprehensive guide examines the top wireless headset options for video conferencing available in the market, based on performance metrics, user feedback, and expert analysis.",
+      "image": "/api/placeholder/800/600",
+      "category": "audio",
+      "url": "/audio/best-wireless-headset-for-zoom-meetings",
+      "date": "2025-01-19",
+      "excerpt": "A thorough analysis of the market's leading wireless headsets for video conferencing, with detailed comparisons and recommendations based on performance, value, and reliability.",
+      "imageUrl": "/api/placeholder/800/600",
+      "amazonUrl": "https://www.amazon.com/s?k=wireless+headset+zoom",
+      "price": "$50-$200",
+      "quickTake": "Based on comprehensive market analysis and performance benchmarks, these wireless headsets stand out for their combination of features, performance, and value across different price points.",
+      "products": [
+        {
+          "title": "Best Overall Choice",
+          "imageUrl": "/api/placeholder/400/400",
+          "description": "This model stands out for its exceptional comfort and comprehensive feature set, making it the optimal choice for most video conferencing users.",
+          "amazonUrl": "https://www.amazon.com/s?k=wireless+headset+zoom+best+rated"
+        },
+        {
+          "title": "Best Budget Option",
+          "imageUrl": "/api/placeholder/400/400",
+          "description": "This cost-effective option delivers reliable performance and essential features at a competitive price point, making it an excellent value choice.",
+          "amazonUrl": "https://www.amazon.com/s?k=wireless+headset+zoom+budget"
+        },
+        {
+          "title": "Premium Choice",
+          "imageUrl": "/api/placeholder/400/400",
+          "description": "This high-end model offers superior audio quality and advanced features, justifying its premium price point for users requiring professional-grade quality.",
+          "amazonUrl": "https://www.amazon.com/s?k=wireless+headset+zoom+premium"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Best USB Microphone for Gaming",
+      "description": "This comprehensive guide examines the top USB microphone options for gaming available in the market, based on performance metrics, user feedback, and expert analysis.",
+      "image": "/api/placeholder/800/600",
+      "category": "audio",
+      "url": "/audio/best-usb-microphone-for-gaming",
+      "date": "2025-01-19",
+      "excerpt": "A thorough analysis of the market's leading USB microphones for gaming, with detailed comparisons and recommendations based on performance, value, and reliability.",
+      "imageUrl": "/api/placeholder/800/600",
+      "amazonUrl": "https://www.amazon.com/s?k=usb+microphone+gaming",
+      "price": "$50-$200",
+      "quickTake": "Based on comprehensive market analysis and performance benchmarks, these USB microphones stand out for their combination of features, performance, and value across different price points.",
+      "products": [
+        {
+          "title": "Best Overall Choice",
+          "imageUrl": "/api/placeholder/400/400",
+          "description": "This model stands out for its exceptional audio quality and comprehensive feature set, making it the optimal choice for most gaming scenarios.",
+          "amazonUrl": "https://www.amazon.com/s?k=usb+microphone+gaming+best+rated"
+        },
+        {
+          "title": "Best Budget Option",
+          "imageUrl": "/api/placeholder/400/400",
+          "description": "This cost-effective option delivers reliable performance and essential features at a competitive price point, making it an excellent value choice.",
+          "amazonUrl": "https://www.amazon.com/s?k=usb+microphone+gaming+budget"
+        },
+        {
+          "title": "Premium Choice",
+          "imageUrl": "/api/placeholder/400/400",
+          "description": "This high-end model offers superior audio quality and advanced features, justifying its premium price point for users requiring professional-grade quality.",
+          "amazonUrl": "https://www.amazon.com/s?k=usb+microphone+gaming+premium"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Best Microphone for Voiceover Work",
+      "description": "This comprehensive guide examines the top microphone options for voiceover work available in the market, based on performance metrics, user feedback, and expert analysis.",
+      "image": "/api/placeholder/800/600",
+      "category": "audio",
+      "url": "/audio/best-microphone-for-voiceover-work",
+      "date": "2025-01-19",
+      "excerpt": "A thorough analysis of the market's leading microphones for voiceover work, with detailed comparisons and recommendations based on performance, value, and reliability.",
+      "imageUrl": "/api/placeholder/800/600",
+      "amazonUrl": "https://www.amazon.com/s?k=microphone+voiceover",
+      "price": "$150-$500",
+      "quickTake": "Based on comprehensive market analysis and performance benchmarks, these microphones stand out for their combination of features, performance, and value across different price points for professional voiceover work.",
+      "products": [
+        {
+          "title": "Best Overall Choice",
+          "imageUrl": "/api/placeholder/400/400",
+          "description": "This model stands out for its exceptional studio quality and comprehensive feature set, making it the optimal choice for most voiceover professionals.",
+          "amazonUrl": "https://www.amazon.com/s?k=microphone+voiceover+best+rated"
+        },
+        {
+          "title": "Best Budget Option",
+          "imageUrl": "/api/placeholder/400/400",
+          "description": "This cost-effective option delivers reliable studio-quality audio and essential features at a competitive price point, making it an excellent value choice.",
+          "amazonUrl": "https://www.amazon.com/s?k=microphone+voiceover+budget"
+        },
+        {
+          "title": "Premium Choice",
+          "imageUrl": "/api/placeholder/400/400",
+          "description": "This high-end model offers superior audio fidelity and advanced features, justifying its premium price point for users requiring broadcast-quality audio.",
+          "amazonUrl": "https://www.amazon.com/s?k=microphone+voiceover+premium"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Best Headset for Online Gaming Under $75",
+      "description": "This comprehensive guide examines the top gaming headset options under $75 available in the market, based on performance metrics, user feedback, and expert analysis.",
+      "image": "/api/placeholder/800/600",
+      "category": "audio",
+      "url": "/audio/best-headset-for-online-gaming-under-75",
+      "date": "2025-01-19",
+      "excerpt": "A thorough analysis of the market's leading budget gaming headsets, with detailed comparisons and recommendations based on performance, value, and reliability.",
+      "imageUrl": "/api/placeholder/800/600",
+      "amazonUrl": "https://www.amazon.com/s?k=gaming+headset+under+75",
+      "price": "Under $75",
+      "quickTake": "Based on comprehensive market analysis and performance benchmarks, these budget gaming headsets stand out for their combination of features, performance, and value while maintaining affordability.",
+      "products": [
+        {
+          "title": "Best Overall Choice",
+          "imageUrl": "/api/placeholder/400/400",
+          "description": "This model stands out for its balanced performance and comprehensive gaming features, making it the optimal choice for most budget-conscious gamers.",
+          "amazonUrl": "https://www.amazon.com/s?k=gaming+headset+under+75+best+rated"
+        },
+        {
+          "title": "Best Budget Option",
+          "imageUrl": "/api/placeholder/400/400",
+          "description": "This ultra-budget option delivers reliable gaming audio and essential features at an extremely competitive price point, making it an excellent value choice.",
+          "amazonUrl": "https://www.amazon.com/s?k=gaming+headset+under+75+budget"
+        },
+        {
+          "title": "Premium Choice",
+          "imageUrl": "/api/placeholder/400/400",
+          "description": "This higher-end model within the price range offers enhanced audio quality and additional features, maximizing value while staying under $75.",
+          "amazonUrl": "https://www.amazon.com/s?k=gaming+headset+under+75+premium"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Best Budget Headset for Work",
+      "description": "This comprehensive guide examines the top budget headset options for work available in the market, based on performance metrics, user feedback, and expert analysis.",
+      "image": "/api/placeholder/800/600",
+      "category": "audio",
+      "url": "/audio/best-budget-headset-for-work",
+      "date": "2025-01-19",
+      "excerpt": "A thorough analysis of the market's leading budget work headsets, with detailed comparisons and recommendations based on performance, value, and reliability.",
+      "imageUrl": "/api/placeholder/800/600",
+      "amazonUrl": "https://www.amazon.com/s?k=budget+work+headset",
+      "price": "$30-$100",
+      "quickTake": "Based on comprehensive market analysis and performance benchmarks, these budget work headsets stand out for their combination of comfort, audio clarity, and value at accessible price points.",
+      "products": [
+        {
+          "title": "Best Overall Choice",
+          "imageUrl": "/api/placeholder/400/400",
+          "description": "This model stands out for its professional performance and essential business features, making it the optimal choice for most office workers.",
+          "amazonUrl": "https://www.amazon.com/s?k=budget+work+headset+best+rated"
+        },
+        {
+          "title": "Best Budget Option",
+          "imageUrl": "/api/placeholder/400/400",
+          "description": "This cost-effective option delivers reliable call quality and basic features at a highly competitive price point, making it an excellent value choice.",
+          "amazonUrl": "https://www.amazon.com/s?k=budget+work+headset+budget"
+        },
+        {
+          "title": "Premium Choice",
+          "imageUrl": "/api/placeholder/400/400",
+          "description": "This higher-end budget model offers improved comfort and advanced calling features, providing enhanced value while maintaining affordability.",
+          "amazonUrl": "https://www.amazon.com/s?k=budget+work+headset+premium"
         }
       ]
     }
