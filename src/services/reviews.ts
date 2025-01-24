@@ -1,15 +1,8 @@
-import { createClient } from '@supabase/supabase-js';
-import { Review } from '@/types/supabase';
-
-const supabase = createClient(
-  import.meta.env.VITE_SUPABASE_URL,
-  import.meta.env.VITE_SUPABASE_ANON_KEY
-);
+import { supabase } from "@/integrations/supabase/client";
+import { Review } from "@/types/supabase";
 
 export async function getReviewsByCategory(category: string): Promise<Review[]> {
   console.log('Starting getReviewsByCategory with category:', category);
-  console.log('Supabase URL:', import.meta.env.VITE_SUPABASE_URL);
-  console.log('Supabase key length:', import.meta.env.VITE_SUPABASE_ANON_KEY?.length);
 
   let query = supabase
     .from('reviews')
@@ -26,7 +19,7 @@ export async function getReviewsByCategory(category: string): Promise<Review[]> 
 
   if (error) {
     console.error('Error fetching reviews:', error);
-    return [];
+    throw error;
   }
 
   console.log('Successfully fetched reviews:', data);
@@ -42,12 +35,12 @@ export async function getReviewBySlug(slug: string): Promise<Review | null> {
       *,
       products (*)
     `)
-    .eq('slug', slug)
-    .single();
+    .eq('url', slug)
+    .maybeSingle();
 
   if (error) {
     console.error('Error fetching review:', error);
-    return null;
+    throw error;
   }
 
   console.log('Successfully fetched review:', data);
