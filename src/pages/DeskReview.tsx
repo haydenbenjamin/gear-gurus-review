@@ -13,13 +13,13 @@ const DeskReview = () => {
 
   useEffect(() => {
     const loadReview = async () => {
-      const reviewData = await getReviewBySlug('best-desks-under-200');
+      const reviewData = await getReviewBySlug('desks/best-desks-under-200');
       setReview(reviewData);
 
       if (reviewData) {
         const allReviews = await getReviewsByCategory("desks");
         const related = allReviews
-          .filter((r) => r.url !== 'best-desks-under-200')
+          .filter((r) => r.url !== '/desks/best-desks-under-200')
           .slice(0, 3);
         setRelatedReviews(related);
       }
@@ -35,26 +35,15 @@ const DeskReview = () => {
       <Header />
       <main className="container mx-auto px-4 py-8">
         <article className="bg-primary rounded-lg shadow-md p-6 max-w-4xl mx-auto">
-          <ReviewHeader 
-            title={review.title}
-            date={review.date || ''}
-          />
+          <ReviewHeader review={review} />
 
           {review.quicktake && (
-            <QuickTake content={review.quicktake} />
+            <QuickTake quickTake={review.quicktake} />
           )}
 
-          <div className="space-y-8 mt-8">
-            {review.products?.map((product) => (
-              <ProductReview
-                key={product.id}
-                title={product.title || ''}
-                imageUrl={product.imageurl || ''}
-                description={product.description || ''}
-                amazonUrl={product.amazonurl || ''}
-              />
-            ))}
-          </div>
+          {review.products && (
+            <ProductReview products={review.products} />
+          )}
 
           <RelatedReviews reviews={relatedReviews} />
         </article>

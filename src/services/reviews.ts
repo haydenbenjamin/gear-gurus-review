@@ -29,17 +29,41 @@ export async function getReviewsByCategory(category: string): Promise<Review[]> 
 export async function getReviewBySlug(slug: string): Promise<Review | null> {
   console.log('Starting getReviewBySlug with slug:', slug);
   
+  // Remove leading slash if present
+  const cleanSlug = slug.startsWith('/') ? slug.substring(1) : slug;
+  
+  // If it starts with 'review/', it's an ID-based URL
+  if (cleanSlug.startsWith('review/')) {
+    const reviewId = cleanSlug.split('/')[1];
+    const { data, error } = await supabase
+      .from('reviews')
+      .select(`
+        *,
+        products (*)
+      `)
+      .eq('id', reviewId)
+      .maybeSingle();
+
+    if (error) {
+      console.error('Error fetching review by ID:', error);
+      throw error;
+    }
+
+    return data;
+  }
+  
+  // Otherwise, it's a category-based URL
   const { data, error } = await supabase
     .from('reviews')
     .select(`
       *,
       products (*)
     `)
-    .eq('url', slug)
+    .eq('url', `/${cleanSlug}`)
     .maybeSingle();
 
   if (error) {
-    console.error('Error fetching review:', error);
+    console.error('Error fetching review by URL:', error);
     throw error;
   }
 
