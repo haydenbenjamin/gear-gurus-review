@@ -7,7 +7,10 @@ const supabase = createClient(
 );
 
 export async function getReviewsByCategory(category: string): Promise<Review[]> {
-  console.log('Fetching reviews for category:', category);
+  console.log('Starting getReviewsByCategory with category:', category);
+  console.log('Supabase URL:', import.meta.env.VITE_SUPABASE_URL);
+  console.log('Supabase key length:', import.meta.env.VITE_SUPABASE_ANON_KEY?.length);
+
   let query = supabase
     .from('reviews')
     .select(`
@@ -26,11 +29,13 @@ export async function getReviewsByCategory(category: string): Promise<Review[]> 
     return [];
   }
 
-  console.log('Fetched reviews:', data);
+  console.log('Successfully fetched reviews:', data);
   return data || [];
 }
 
 export async function getReviewBySlug(slug: string): Promise<Review | null> {
+  console.log('Starting getReviewBySlug with slug:', slug);
+  
   const { data, error } = await supabase
     .from('reviews')
     .select(`
@@ -45,5 +50,6 @@ export async function getReviewBySlug(slug: string): Promise<Review | null> {
     return null;
   }
 
+  console.log('Successfully fetched review:', data);
   return data;
 }
