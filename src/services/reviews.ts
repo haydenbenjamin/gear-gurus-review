@@ -34,12 +34,15 @@ export async function getReviewBySlug(slug: string): Promise<Review | null> {
   
   // If it starts with 'review/', it's an ID-based URL
   if (cleanSlug.startsWith('review/')) {
-    const reviewId = parseInt(cleanSlug.split('/')[1], 10);
+    const idPart = cleanSlug.split('/')[1];
+    const reviewId = parseInt(idPart, 10);
+    
     if (isNaN(reviewId)) {
-      console.error('Invalid review ID:', cleanSlug.split('/')[1]);
+      console.error('Invalid review ID:', idPart);
       return null;
     }
 
+    console.log('Fetching review by ID:', reviewId);
     const { data, error } = await supabase
       .from('reviews')
       .select(`
@@ -58,6 +61,7 @@ export async function getReviewBySlug(slug: string): Promise<Review | null> {
   }
   
   // Otherwise, it's a category-based URL
+  console.log('Fetching review by URL:', cleanSlug);
   const { data, error } = await supabase
     .from('reviews')
     .select(`
