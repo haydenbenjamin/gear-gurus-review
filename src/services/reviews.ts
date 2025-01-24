@@ -1,32 +1,42 @@
-import { Review } from '@/types/review';
+import { createClient } from '@supabase/supabase-js';
+import { Review, Product } from '@/types/supabase';
+
+const supabase = createClient(
+  import.meta.env.VITE_SUPABASE_URL,
+  import.meta.env.VITE_SUPABASE_ANON_KEY
+);
 
 export async function getReviewsByCategory(category: string): Promise<Review[]> {
-  try {
-    const response = await import(`@/content/${category}.json`);
-    return response.reviews;
-  } catch (error) {
-    console.error(`Error loading reviews for category ${category}:`, error);
+  const { data, error } = await supabase
+    .from('reviews')
+    .select(`
+      *,
+      products (*)
+    `)
+    .eq('category', category === 'all' ? undefined : category);
+
+  if (error) {
+    console.error('Error fetching reviews:', error);
     return [];
   }
+
+  return data || [];
 }
 
-export async function getReviewByUrl(path: string): Promise<Review | null> {
-  // Remove leading slash if present
-  const cleanPath = path.startsWith('/') ? path.substring(1) : path;
-  
-  // Get the category from the first part of the path
-  const category = cleanPath.split('/')[0];
-  
-  try {
-    const reviews = await getReviewsByCategory(category);
-    const review = reviews.find(review => {
-      const reviewUrl = review.url.startsWith('/') ? review.url.substring(1) : review.url;
-      return reviewUrl === cleanPath;
-    });
-    
-    return review || null;
-  } catch (error) {
-    console.error(`Error finding review for path ${path}:`, error);
+export async function getReviewBySlug(slug: string): Promise<Review | null> {
+  const { data, error } = await supabase
+    .from('reviews')
+    .select(`
+      *,
+      products (*)
+    `)
+    .eq('slug', slug)
+    .single();
+
+  if (error) {
+    console.error('Error fetching review:', error);
     return null;
   }
+
+  return data;
 }

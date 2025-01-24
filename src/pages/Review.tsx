@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import { getReviewByUrl } from "@/services/reviews";
+import { getReviewBySlug } from "@/services/reviews";
 import { ReviewHeader } from "@/components/review/ReviewHeader";
 import { QuickTake } from "@/components/review/QuickTake";
 import { ProductReview } from "@/components/review/ProductReview";
@@ -8,10 +8,11 @@ import { RelatedReviews } from "@/components/review/RelatedReviews";
 
 const Review = () => {
   const { "*": path } = useParams();
+  const slug = path?.split('/').pop() || '';
   
   const { data: review, isLoading } = useQuery({
-    queryKey: ["review", path],
-    queryFn: () => getReviewByUrl(path || ""),
+    queryKey: ["review", slug],
+    queryFn: () => getReviewBySlug(slug),
   });
 
   if (isLoading) {
@@ -35,25 +36,23 @@ const Review = () => {
       <div className="container mx-auto px-4 py-8">
         <ReviewHeader title={review.title} date={review.date} />
         
-        {review.quickTake && (
-          <QuickTake content={review.quickTake} />
+        {review.quick_take && (
+          <QuickTake content={review.quick_take} />
         )}
 
         <div className="space-y-8">
           {review.products?.map((product) => (
             <ProductReview
-              key={product.title}
+              key={product.id}
               title={product.title}
-              imageUrl={product.imageUrl}
+              imageUrl={product.image_url}
               description={product.description}
-              amazonUrl={product.amazonUrl}
+              amazonUrl={product.amazon_url}
             />
           ))}
         </div>
 
-        <RelatedReviews
-          reviews={[]}
-        />
+        <RelatedReviews reviews={[]} />
       </div>
     </div>
   );
