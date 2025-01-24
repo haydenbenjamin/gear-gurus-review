@@ -1,14 +1,19 @@
 import { useParams } from "react-router-dom";
 import { ReviewCard } from "@/components/ReviewCard";
 import { Header } from "@/components/Header";
-import { reviews, categories } from "@/data/reviews";
+import { categories } from "@/data/reviews";
+import { useQuery } from "@tanstack/react-query";
+import { getReviewsByCategory } from "@/services/reviews";
+import { Review } from "@/types/supabase";
 
 const Category = () => {
   const { categoryId } = useParams();
   const category = categories.find((c) => c.id === categoryId);
-  const filteredReviews = reviews.filter(
-    (review) => review.category === categoryId
-  );
+  
+  const { data: reviews = [] } = useQuery<Review[]>({
+    queryKey: ['reviews', categoryId],
+    queryFn: () => getReviewsByCategory(categoryId || 'all'),
+  });
 
   return (
     <div className="min-h-screen bg-muted">
@@ -18,7 +23,7 @@ const Category = () => {
           {category?.name || "Category Not Found"}
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredReviews.map((review) => (
+          {reviews.map((review) => (
             <ReviewCard key={review.id} review={review} />
           ))}
         </div>

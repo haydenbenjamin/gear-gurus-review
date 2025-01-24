@@ -5,8 +5,8 @@ import { ReviewHeader } from "@/components/review/ReviewHeader";
 import { QuickTake } from "@/components/review/QuickTake";
 import { ProductReview } from "@/components/review/ProductReview";
 import { RelatedReviews } from "@/components/review/RelatedReviews";
-import { getReviewByUrl, getReviewsByCategory } from "@/services/reviews";
-import { Review } from "@/types/review";
+import { getReviewBySlug, getReviewsByCategory } from "@/services/reviews";
+import { Review } from "@/types/supabase";
 
 const DeskReview = () => {
   const [review, setReview] = useState<Review | null>(null);
@@ -15,14 +15,14 @@ const DeskReview = () => {
 
   useEffect(() => {
     const loadReview = async () => {
-      const url = `/desks/${reviewId}`;
-      const reviewData = await getReviewByUrl(url);
+      if (!reviewId) return;
+      const reviewData = await getReviewBySlug(reviewId);
       setReview(reviewData);
 
       if (reviewData) {
         const allReviews = await getReviewsByCategory("desks");
         const related = allReviews
-          .filter((r) => r.url !== url)
+          .filter((r) => r.slug !== reviewId)
           .slice(0, 3);
         setRelatedReviews(related);
       }
@@ -44,15 +44,15 @@ const DeskReview = () => {
           />
 
           <div className="prose prose-lg max-w-none">
-            <QuickTake content={review.quickTake || ""} />
+            <QuickTake content={review.quick_take || ""} />
 
             {review.products?.map((product) => (
               <ProductReview
                 key={product.title}
                 title={product.title}
-                imageUrl={product.imageUrl}
+                imageUrl={product.image_url}
                 description={product.description}
-                amazonUrl={product.amazonUrl}
+                amazonUrl={product.amazon_url}
               />
             ))}
           </div>
