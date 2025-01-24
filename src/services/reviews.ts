@@ -34,7 +34,12 @@ export async function getReviewBySlug(slug: string): Promise<Review | null> {
   
   // If it starts with 'review/', it's an ID-based URL
   if (cleanSlug.startsWith('review/')) {
-    const reviewId = cleanSlug.split('/')[1];
+    const reviewId = parseInt(cleanSlug.split('/')[1], 10);
+    if (isNaN(reviewId)) {
+      console.error('Invalid review ID:', cleanSlug.split('/')[1]);
+      return null;
+    }
+
     const { data, error } = await supabase
       .from('reviews')
       .select(`
