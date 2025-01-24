@@ -27,7 +27,7 @@ const Review = () => {
     <div className="min-h-screen bg-muted">
       <Header />
       <main className="container mx-auto px-4 py-8">
-        <article className="bg-primary rounded-lg shadow-md p-6 max-w-4xl mx-auto">
+        <article className="bg-primary rounded-lg shadow-md p-6 max-w-4xl mx-auto text-[#F1F1F1]">
           <ReviewHeader review={review} />
           {review.quicktake && <QuickTake quickTake={review.quicktake} />}
           {review.products && <ProductReview products={review.products} />}
