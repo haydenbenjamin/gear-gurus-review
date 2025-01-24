@@ -1,5 +1,5 @@
 import { createClient } from '@supabase/supabase-js';
-import { Review, Product } from '@/types/supabase';
+import { Review } from '@/types/supabase';
 
 const supabase = createClient(
   import.meta.env.VITE_SUPABASE_URL,
@@ -7,19 +7,26 @@ const supabase = createClient(
 );
 
 export async function getReviewsByCategory(category: string): Promise<Review[]> {
-  const { data, error } = await supabase
+  console.log('Fetching reviews for category:', category);
+  let query = supabase
     .from('reviews')
     .select(`
       *,
       products (*)
-    `)
-    .eq('category', category === 'all' ? undefined : category);
+    `);
+
+  if (category !== 'all') {
+    query = query.eq('category', category);
+  }
+
+  const { data, error } = await query;
 
   if (error) {
     console.error('Error fetching reviews:', error);
     return [];
   }
 
+  console.log('Fetched reviews:', data);
   return data || [];
 }
 

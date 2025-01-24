@@ -6,6 +6,8 @@ interface ReviewCardProps {
 }
 
 export const ReviewCard = ({ review }: ReviewCardProps) => {
+  console.log('Review in ReviewCard:', review);
+  
   return (
     <div className="bg-primary rounded-lg shadow-xl overflow-hidden transition-transform hover:scale-[1.02] animate-fade-in border border-accent/20">
       <img
