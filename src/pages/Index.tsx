@@ -7,7 +7,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Review } from "@/types/supabase";
 
 const Index = () => {
-  const { data: reviews = [] } = useQuery<Review[]>({
+  const { data: reviews = [], isLoading } = useQuery<Review[]>({
     queryKey: ['reviews', 'all'],
     queryFn: () => getReviewsByCategory('all'),
   });
@@ -20,11 +20,15 @@ const Index = () => {
         <h2 className="text-3xl font-bold text-white mb-8">
           Latest Reviews
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {reviews.map((review) => (
-            <ReviewCard key={review.id} review={review} />
-          ))}
-        </div>
+        {isLoading ? (
+          <p className="text-white">Loading reviews...</p>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {reviews.map((review) => (
+              <ReviewCard key={review.id} review={review} />
+            ))}
+          </div>
+        )}
       </main>
       <Footer />
     </div>

@@ -18,14 +18,14 @@ export const ReviewCard = ({ review }: ReviewCardProps) => {
           {review.category}
         </span>
         <h2 className="text-xl font-semibold mt-2 mb-2 text-white">
-          <Link to={`/${review.category}/${review.slug}`} className="hover:text-secondary">
+          <Link to={`/review/${review.slug}`} className="hover:text-secondary">
             {review.title}
           </Link>
         </h2>
         <p className="text-gray-300 mb-4">{review.description}</p>
         <div className="flex justify-end">
           <Link
-            to={`/${review.category}/${review.slug}`}
+            to={`/review/${review.slug}`}
             className="bg-secondary text-white px-4 py-2 rounded hover:bg-accent transition-colors"
           >
             Full Review
