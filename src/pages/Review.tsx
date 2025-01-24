@@ -1,17 +1,18 @@
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { getReviewBySlug } from "@/services/reviews";
+import { Header } from "@/components/Header";
 import { ReviewHeader } from "@/components/review/ReviewHeader";
 import { QuickTake } from "@/components/review/QuickTake";
 import { ProductReview } from "@/components/review/ProductReview";
 import { Review as ReviewType } from "@/types/supabase";
 
 const Review = () => {
-  const { reviewId } = useParams();
+  const { category, slug } = useParams();
   
-  const { data: review, isLoading, error } = useQuery({
-    queryKey: ['review', reviewId],
-    queryFn: () => getReviewBySlug(`/review/${reviewId}`),
+  const { data: review, isLoading, error } = useQuery<ReviewType | null>({
+    queryKey: ['review', category, slug],
+    queryFn: () => getReviewBySlug(`${category}/${slug}`),
   });
 
   if (isLoading) {
@@ -23,10 +24,15 @@ const Review = () => {
   }
 
   return (
-    <div className="min-h-screen bg-muted pb-16">
-      <ReviewHeader review={review} />
-      {review.quicktake && <QuickTake quickTake={review.quicktake} />}
-      {review.products && <ProductReview products={review.products} />}
+    <div className="min-h-screen bg-muted">
+      <Header />
+      <main className="container mx-auto px-4 py-8">
+        <article className="bg-primary rounded-lg shadow-md p-6 max-w-4xl mx-auto">
+          <ReviewHeader review={review} />
+          {review.quicktake && <QuickTake quickTake={review.quicktake} />}
+          {review.products && <ProductReview products={review.products} />}
+        </article>
+      </main>
     </div>
   );
 };

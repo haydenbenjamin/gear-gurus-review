@@ -13,9 +13,8 @@ const App = () => (
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/category/:categoryId" element={<Category />} />
-        <Route path="/review/:reviewId" element={<Review />} />
+        <Route path="/:category/:slug" element={<Review />} />
         <Route path="/desks/best-desks-under-200" element={<DeskReview />} />
-        <Route path="/audio/:reviewId" element={<Review />} />
       </Routes>
     </BrowserRouter>
   </QueryClientProvider>
