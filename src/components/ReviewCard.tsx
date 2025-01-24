@@ -8,6 +8,9 @@ interface ReviewCardProps {
 export const ReviewCard = ({ review }: ReviewCardProps) => {
   console.log('Review in ReviewCard:', review);
   
+  // Construct the review URL - if no custom URL is provided, use the review ID
+  const reviewUrl = review.url || `/review/${review.id}`;
+  
   return (
     <div className="bg-primary rounded-lg shadow-xl overflow-hidden transition-transform hover:scale-[1.02] animate-fade-in border border-accent/20">
       <img
@@ -20,14 +23,14 @@ export const ReviewCard = ({ review }: ReviewCardProps) => {
           {review.category}
         </span>
         <h2 className="text-xl font-semibold mt-2 mb-2 text-white">
-          <Link to={review.url || `/review/${review.id}`} className="hover:text-secondary">
+          <Link to={reviewUrl} className="hover:text-secondary">
             {review.title}
           </Link>
         </h2>
         <p className="text-gray-300 mb-4">{review.description}</p>
         <div className="flex justify-end">
           <Link
-            to={review.url || `/review/${review.id}`}
+            to={reviewUrl}
             className="bg-secondary text-white px-4 py-2 rounded hover:bg-accent transition-colors"
           >
             Full Review

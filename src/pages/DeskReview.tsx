@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { ReviewHeader } from "@/components/review/ReviewHeader";
 import { QuickTake } from "@/components/review/QuickTake";
@@ -11,25 +10,23 @@ import { Review } from "@/types/supabase";
 const DeskReview = () => {
   const [review, setReview] = useState<Review | null>(null);
   const [relatedReviews, setRelatedReviews] = useState<Review[]>([]);
-  const { reviewId } = useParams();
 
   useEffect(() => {
     const loadReview = async () => {
-      if (!reviewId) return;
-      const reviewData = await getReviewBySlug(reviewId);
+      const reviewData = await getReviewBySlug('best-desks-under-200');
       setReview(reviewData);
 
       if (reviewData) {
         const allReviews = await getReviewsByCategory("desks");
         const related = allReviews
-          .filter((r) => r.slug !== reviewId)
+          .filter((r) => r.url !== 'best-desks-under-200')
           .slice(0, 3);
         setRelatedReviews(related);
       }
     };
 
     loadReview();
-  }, [reviewId]);
+  }, []);
 
   if (!review) return null;
 
@@ -37,28 +34,30 @@ const DeskReview = () => {
     <div className="min-h-screen bg-muted">
       <Header />
       <main className="container mx-auto px-4 py-8">
-        <article className="bg-white rounded-lg shadow-md p-6 max-w-4xl mx-auto">
+        <article className="bg-primary rounded-lg shadow-md p-6 max-w-4xl mx-auto">
           <ReviewHeader 
             title={review.title}
-            date={review.date}
+            date={review.date || ''}
           />
 
-          <div className="prose prose-lg max-w-none">
-            <QuickTake content={review.quick_take || ""} />
+          {review.quicktake && (
+            <QuickTake content={review.quicktake} />
+          )}
 
+          <div className="space-y-8 mt-8">
             {review.products?.map((product) => (
               <ProductReview
-                key={product.title}
-                title={product.title}
-                imageUrl={product.image_url}
-                description={product.description}
-                amazonUrl={product.amazon_url}
+                key={product.id}
+                title={product.title || ''}
+                imageUrl={product.imageurl || ''}
+                description={product.description || ''}
+                amazonUrl={product.amazonurl || ''}
               />
             ))}
           </div>
-        </article>
 
-        <RelatedReviews reviews={relatedReviews} />
+          <RelatedReviews reviews={relatedReviews} />
+        </article>
       </main>
     </div>
   );

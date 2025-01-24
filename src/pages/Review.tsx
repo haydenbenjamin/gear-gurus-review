@@ -5,54 +5,66 @@ import { ReviewHeader } from "@/components/review/ReviewHeader";
 import { QuickTake } from "@/components/review/QuickTake";
 import { ProductReview } from "@/components/review/ProductReview";
 import { RelatedReviews } from "@/components/review/RelatedReviews";
+import { Header } from "@/components/Header";
 
 const Review = () => {
-  const { "*": path } = useParams();
-  const slug = path?.split('/').pop() || '';
+  const { reviewId } = useParams();
   
   const { data: review, isLoading } = useQuery({
-    queryKey: ["review", slug],
-    queryFn: () => getReviewBySlug(slug),
+    queryKey: ["review", reviewId],
+    queryFn: () => getReviewBySlug(reviewId || ''),
   });
 
   if (isLoading) {
     return (
-      <div className="container mx-auto px-4 py-8">
-        <div className="animate-pulse">Loading review...</div>
+      <div className="min-h-screen bg-muted">
+        <Header />
+        <div className="container mx-auto px-4 py-8">
+          <div className="animate-pulse">Loading review...</div>
+        </div>
       </div>
     );
   }
 
   if (!review) {
     return (
-      <div className="container mx-auto px-4 py-8">
-        <div className="text-red-500">Review not found</div>
+      <div className="min-h-screen bg-muted">
+        <Header />
+        <div className="container mx-auto px-4 py-8">
+          <div className="text-red-500">Review not found</div>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-muted">
+      <Header />
       <div className="container mx-auto px-4 py-8">
-        <ReviewHeader title={review.title} date={review.date} />
-        
-        {review.quick_take && (
-          <QuickTake content={review.quick_take} />
-        )}
+        <article className="bg-primary rounded-lg shadow-md p-6 max-w-4xl mx-auto">
+          <ReviewHeader 
+            title={review.title}
+            date={review.date || ''}
+          />
+          
+          {review.quicktake && (
+            <QuickTake content={review.quicktake} />
+          )}
 
-        <div className="space-y-8">
-          {review.products?.map((product) => (
-            <ProductReview
-              key={product.id}
-              title={product.title}
-              imageUrl={product.image_url}
-              description={product.description}
-              amazonUrl={product.amazon_url}
-            />
-          ))}
-        </div>
+          <div className="space-y-8 mt-8">
+            {review.products?.map((product) => (
+              <ProductReview
+                key={product.id}
+                title={product.title || ''}
+                imageUrl={product.imageurl || ''}
+                description={product.description || ''}
+                amazonUrl={product.amazonurl || ''}
+              />
+            ))}
+          </div>
 
-        <RelatedReviews reviews={[]} />
+          <RelatedReviews reviews={[]} />
+        </article>
       </div>
     </div>
   );
